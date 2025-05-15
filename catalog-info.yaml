@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: hbaf4ow58-nodejs-gitops
+  description: This is GitOps manifest for hbaf4ow58-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=hbaf4ow58-nodejs
+    backstage.io/kubernetes-id: hbaf4ow58-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: hbaf4ow58-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:hbaf4ow58-nodejs
